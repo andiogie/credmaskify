@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Credential Masker — Sembunyikan IP, Port, Hostname &amp; Password dari Teks Apa Pun</title>
+  <meta name="description" content="Samarkan IP, port, hostname, email, dan password/token dari teks, log, config, atau hasil terminal sebelum dibagikan. 100% berjalan di browser, tidak ada data yang dikirim ke server."/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon"><i class="ti ti-shield-lock"></i></div>
+      <div class="brand-text">
+        <span class="logo">Credential Masker</span>
+        <span class="logo-sub" id="h-sub">Samarkan IP, port, hostname &amp; password dari teks, log, atau config apa pun</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div style="display:flex;gap:3px">
+        <button class="lang-btn on" id="lb-id" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="dm-btn" id="dmBtn" onclick="toggleDark()">
+        <i class="ti ti-moon" id="dmIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="card" id="optionsCard">
+    <div class="row-between">
+      <span class="sec-title" id="lbl-options">Samarkan:</span>
+    </div>
+    <div class="opt-row">
+      <label class="chk"><input type="checkbox" data-opt="ip" checked><span id="opt-ip">IP address</span></label>
+      <label class="chk"><input type="checkbox" data-opt="port" checked><span id="opt-port">Port (:1234)</span></label>
+      <label class="chk"><input type="checkbox" data-opt="hostname" checked><span id="opt-hostname">Hostname / domain</span></label>
+      <label class="chk"><input type="checkbox" data-opt="email" checked><span id="opt-email">Email</span></label>
+      <label class="chk"><input type="checkbox" data-opt="cred" checked><span id="opt-cred">password / token / key=value</span></label>
+    </div>
+  </div>
+
+  <div class="io-grid">
+    <div class="card io-card">
+      <div class="row-between">
+        <span class="lbl" id="lbl-input">Tempel teks, log, config, atau hasil terminal kamu di sini</span>
+        <span class="lbl" id="lbl-input-sub">original</span>
+      </div>
+      <textarea id="input" placeholder="ssh admin@192.168.1.10 -p 2222
+host: prod-db01.internal.company.com
+DB_PASSWORD=SuperSecret123
+contact: budi@company.com"></textarea>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn-primary" onclick="generateMask()">
+          <i class="ti ti-eye-off"></i> <span id="btn-generate">Generate</span>
+        </button>
+        <button class="btn-sec" onclick="clearAll()" id="btn-clear">Clear</button>
+      </div>
+    </div>
+
+    <div class="card io-card" id="outputCard">
+      <div class="row-between">
+        <span class="sec-title" id="lbl-output">Output</span>
+        <span class="lbl" id="lbl-output-sub">bisa diedit manual</span>
+      </div>
+      <textarea id="output" placeholder="hasil masking akan muncul di sini..."></textarea>
+      <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <button class="btn-sec" onclick="copyOutput()">
+          <i class="ti ti-copy"></i> <span id="copyLabel">Copy hasil</span>
+        </button>
+        <span id="copiedMsg" class="copied-msg">✓ tersalin</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint" id="hint-text"><b id="hint-bold">Cara kerja:</b> setiap huruf/angka pada bagian yang cocok diganti dengan <b>x</b> (panjang &amp; tanda baca tetap sama), sisanya dibiarkan apa adanya. Output tetap bisa diedit manual kapan saja. Semua proses berjalan lokal di browser kamu.</p>
+
+  <footer>
+    <div class="footer-row">
+      <div class="footer-left">
+        <i class="ti ti-mail"></i>
+        <span id="footer-issue-label">Ada bug, saran, atau mau bantu donasi? Email:</span>
+        <a href="mailto:andiogie@gmail.com?subject=%5BCredential%20Masker%5D%20Pesan%20dari%20Pengguna&body=Halo%2C%0A%0AIni%20saya%20mau%20sampaikan%20(hapus%20bagian%20yang%20gak%20relevan)%3A%0A%0A---%20%F0%9F%90%9E%20LAPOR%20BUG%20---%0ADeskripsi%20masalah%3A%0A%0ALangkah%20reproduksi%3A%0A1.%20%0A2.%20%0A%0AHasil%20yang%20diharapkan%3A%0A%0AHasil%20yang%20terjadi%3A%0A%0A%0A---%20%F0%9F%92%A1%20KRITIK%20%26%20SARAN%20---%0A%0A%0A---%20%F0%9F%92%B8%20DONASI%20---%0ASaya%20mau%20bantu%20donasi%20lewat%3A%20(Buy%20Me%20a%20Coffee%20%2F%20Trakteer%20%2F%20lainnya)%0A" id="issueMailLink">andiogie@gmail.com</a>
+        <a href="https://ko-fi.com/andiogie" target="_blank" rel="noopener noreferrer" class="btn-sec" style="padding:2px 10px;font-size:12px" id="donateLink"><i class="ti ti-coffee"></i> <span id="donateLabel">Dukung Project Ini</span></a>
+      </div>
+      <div class="footer-right">
+        <p>&copy; <span id="yr"></span> &mdash; by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a> &middot; <a href="about.html">About</a> &middot; <a href="#">Blog</a> &middot; <a href="faq.html">FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

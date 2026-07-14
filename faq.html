@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ Credential Masker — Pertanyaan yang Sering Ditanyakan</title>
+  <meta name="description" content="Pertanyaan umum soal Credential Masker: apakah data disimpan, pola apa saja yang dideteksi, batasan tool, dan cara pakai."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://credential-masker.example.com/faq.html"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header>
+    <a href="index.html">Credential Masker</a>
+    <nav>
+      <a href="about.html" id="nav-about">Tentang</a>
+      <a href="faq.html" class="active" id="nav-faq">FAQ</a>
+      <a href="#" id="nav-blog">Blog</a>
+      <a href="privacy.html" id="nav-privacy">Privacy</a>
+    </nav>
+    <div class="by-lang-switch">
+      <button class="lang-btn on" id="lb-id" onclick="setPLang('id')">ID</button>
+      <button class="lang-btn" id="lb-en" onclick="setPLang('en')">EN</button>
+    </div>
+  </header>
+
+  <div class="policy">
+    <h1 id="p-title">FAQ — Pertanyaan yang Sering Ditanyakan</h1>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-server-off"></i> <span id="q1">Apakah teks yang saya tempel disimpan atau dikirim ke server?</span></h3>
+      <p id="a1">Tidak. Semua proses masking berjalan sepenuhnya di browser kamu (client-side JavaScript). Tidak ada request ke server mana pun saat kamu klik Generate — begitu kamu tutup atau refresh tab, semua isi kotak input/output hilang.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-list-check"></i> <span id="q2">Pola apa saja yang bisa disamarkan?</span></h3>
+      <p id="a2">Saat ini: IP address (IPv4), port (baik setelah titik dua seperti <code>host:8080</code> maupun lewat flag <code>-p</code>/<code>-P</code>), hostname/domain, alamat email, dan pola credential umum seperti <code>password=</code>, <code>token:</code>, <code>api_key=</code>, termasuk gaya <code>-pPassword123</code> ala MySQL. Masing-masing bisa dinyalakan/dimatikan sendiri lewat checkbox.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-alert-triangle"></i> <span id="q3">Kenapa ada teks yang ke-mask padahal bukan data sensitif?</span></h3>
+      <p id="a3">Tool ini berbasis pola (regex), bukan pemahaman konteks. Jadi sesuatu yang formatnya mirip IP atau hostname — misalnya nomor versi seperti <code>1.2.3.4</code> — bisa ikut ke-mask. Ini disengaja sebagai trade-off: lebih aman kelebihan mask (over-masking) daripada kelewatan data sensitif asli. Hasil di kotak output tetap bisa kamu edit manual kapan saja.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-edit"></i> <span id="q4">Apakah hasil masking bisa saya edit lagi setelah Generate?</span></h3>
+      <p id="a4">Bisa. Kotak output adalah textarea biasa yang tetap bisa diketik/diedit manual, baik untuk memperbaiki bagian yang salah ke-mask maupun menyamarkan bagian lain secara manual.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-currency-dollar"></i> <span id="q5">Apakah tool ini gratis?</span></h3>
+      <p id="a5">Ya, 100% gratis dan tidak butuh akun/login. Kalau tool ini membantu, kamu bisa dukung lewat tombol donasi di footer — tapi itu opsional.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3><i class="ti ti-device-laptop"></i> <span id="q6">Butuh install apa untuk pakai ini?</span></h3>
+      <p id="a6">Tidak perlu. Cukup buka halamannya di browser modern (Chrome, Firefox, Edge, Safari). Tidak ada ekstensi atau software tambahan yang dibutuhkan.</p>
+    </div>
+
+    <a class="back-link" href="index.html"><i class="ti ti-arrow-left"></i> <span id="back-text">Kembali ke Credential Masker</span></a>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <div class="footer-left">
+        <i class="ti ti-mail"></i>
+        <span id="footer-issue-label">Ada bug, saran, atau mau bantu donasi? Email:</span>
+        <a href="mailto:andiogie@gmail.com?subject=%5BCredential%20Masker%5D%20Pesan%20dari%20Pengguna&body=Halo%2C%0A%0AIni%20saya%20mau%20sampaikan%20(hapus%20bagian%20yang%20gak%20relevan)%3A%0A%0A---%20%F0%9F%90%9E%20LAPOR%20BUG%20---%0ADeskripsi%20masalah%3A%0A%0ALangkah%20reproduksi%3A%0A1.%20%0A2.%20%0A%0AHasil%20yang%20diharapkan%3A%0A%0AHasil%20yang%20terjadi%3A%0A%0A%0A---%20%F0%9F%92%A1%20KRITIK%20%26%20SARAN%20---%0A%0A%0A---%20%F0%9F%92%B8%20DONASI%20---%0ASaya%20mau%20bantu%20donasi%20lewat%3A%20(Buy%20Me%20a%20Coffee%20%2F%20Trakteer%20%2F%20lainnya)%0A">andiogie@gmail.com</a>
+        <a href="https://ko-fi.com/andiogie" target="_blank" rel="noopener noreferrer" class="btn-sec" style="padding:2px 10px;font-size:12px"><i class="ti ti-coffee"></i> <span id="donateLabel">Dukung Project Ini</span></a>
+      </div>
+      <div class="footer-right">
+        <p>&copy; <span id="yr"></span> &mdash; by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a> &middot; <a href="about.html">About</a> &middot; <a href="#">Blog</a> &middot; <a href="faq.html">FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const PT = {
+  id: {
+    navAbout:'Tentang', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
+    title:'FAQ — Pertanyaan yang Sering Ditanyakan',
+    q1:'Apakah teks yang saya tempel disimpan atau dikirim ke server?',
+    a1:'Tidak. Semua proses masking berjalan sepenuhnya di browser kamu (client-side JavaScript). Tidak ada request ke server mana pun saat kamu klik Generate — begitu kamu tutup atau refresh tab, semua isi kotak input/output hilang.',
+    q2:'Pola apa saja yang bisa disamarkan?',
+    a2:'Saat ini: IP address (IPv4), port (baik setelah titik dua seperti <code>host:8080</code> maupun lewat flag <code>-p</code>/<code>-P</code>), hostname/domain, alamat email, dan pola credential umum seperti <code>password=</code>, <code>token:</code>, <code>api_key=</code>, termasuk gaya <code>-pPassword123</code> ala MySQL. Masing-masing bisa dinyalakan/dimatikan sendiri lewat checkbox.',
+    q3:'Kenapa ada teks yang ke-mask padahal bukan data sensitif?',
+    a3:'Tool ini berbasis pola (regex), bukan pemahaman konteks. Jadi sesuatu yang formatnya mirip IP atau hostname — misalnya nomor versi seperti <code>1.2.3.4</code> — bisa ikut ke-mask. Ini disengaja sebagai trade-off: lebih aman kelebihan mask (over-masking) daripada kelewatan data sensitif asli. Hasil di kotak output tetap bisa kamu edit manual kapan saja.',
+    q4:'Apakah hasil masking bisa saya edit lagi setelah Generate?',
+    a4:'Bisa. Kotak output adalah textarea biasa yang tetap bisa diketik/diedit manual, baik untuk memperbaiki bagian yang salah ke-mask maupun menyamarkan bagian lain secara manual.',
+    q5:'Apakah tool ini gratis?',
+    a5:'Ya, 100% gratis dan tidak butuh akun/login. Kalau tool ini membantu, kamu bisa dukung lewat tombol donasi di footer — tapi itu opsional.',
+    q6:'Butuh install apa untuk pakai ini?',
+    a6:'Tidak perlu. Cukup buka halamannya di browser modern (Chrome, Firefox, Edge, Safari). Tidak ada ekstensi atau software tambahan yang dibutuhkan.',
+    back:'Kembali ke Credential Masker',
+    footerIssue:'Ada bug, saran, atau mau bantu donasi? Email:',
+    donate:'Dukung Project Ini'
+  },
+  en: {
+    navAbout:'About', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
+    title:'FAQ — Frequently Asked Questions',
+    q1:'Is the text I paste stored or sent to a server?',
+    a1:'No. All masking runs entirely in your browser (client-side JavaScript). No request is sent anywhere when you click Generate — once you close or refresh the tab, everything in the input/output boxes is gone.',
+    q2:'What patterns can be masked?',
+    a2:'Currently: IPv4 addresses, ports (both after a colon like <code>host:8080</code> and via the <code>-p</code>/<code>-P</code> flag), hostnames/domains, email addresses, and common credential patterns like <code>password=</code>, <code>token:</code>, <code>api_key=</code>, including MySQL-style <code>-pPassword123</code>. Each can be toggled on/off individually via checkboxes.',
+    q3:'Why is something masked that isn\'t actually sensitive data?',
+    a3:'This tool is pattern-based (regex), not context-aware. So anything shaped like an IP or hostname — e.g. a version number like <code>1.2.3.4</code> — may get masked too. This is intentional: it\'s safer to over-mask than to miss real sensitive data. The output box remains manually editable at any time.',
+    q4:'Can I still edit the result after clicking Generate?',
+    a4:'Yes. The output box is a normal textarea you can keep typing/editing in, whether to fix something that got wrongly masked or to mask something else manually.',
+    q5:'Is this tool free?',
+    a5:'Yes, 100% free with no account or login required. If it helps you, you can support it via the donate button in the footer — but that\'s entirely optional.',
+    q6:'Do I need to install anything to use this?',
+    a6:'No. Just open the page in a modern browser (Chrome, Firefox, Edge, Safari). No extension or extra software required.',
+    back:'Back to Credential Masker',
+    footerIssue:'Found a bug or have a suggestion? Email:',
+    donate:'Support This Project'
+  }
+};
+
+function setPLang(l){
+  const d = PT[l];
+  document.getElementById('lb-id').classList.toggle('on', l==='id');
+  document.getElementById('lb-en').classList.toggle('on', l==='en');
+  document.documentElement.lang = l;
+  document.getElementById('nav-about').textContent = d.navAbout;
+  document.getElementById('nav-faq').textContent = d.navFaq;
+  document.getElementById('nav-blog').textContent = d.navBlog;
+  document.getElementById('nav-privacy').textContent = d.navPrivacy;
+  document.getElementById('p-title').textContent = d.title;
+  for (let i = 1; i <= 6; i++) {
+    document.getElementById('q'+i).textContent = d['q'+i];
+    document.getElementById('a'+i).innerHTML = d['a'+i];
+  }
+  document.getElementById('back-text').textContent = d.back;
+  document.getElementById('footer-issue-label').textContent = d.footerIssue;
+  document.querySelectorAll('#donateLabel').forEach(el => el.textContent = d.donate);
+}
+</script>
+</body>
+</html>

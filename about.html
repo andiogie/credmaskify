@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Credential Masker — Kenapa Tool Ini Dibuat</title>
+  <meta name="description" content="Credential Masker adalah tool gratis, client-side, untuk menyamarkan IP, port, hostname, email, dan password/token dari teks sebelum kamu bagikan. Baca kenapa dan bagaimana tool ini dibuat."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://credential-masker.example.com/about.html"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="app" id="app">
+
+  <header>
+    <a href="index.html">Credential Masker</a>
+    <nav>
+      <a href="about.html" class="active" id="nav-about">Tentang</a>
+      <a href="faq.html" id="nav-faq">FAQ</a>
+      <a href="#" id="nav-blog">Blog</a>
+      <a href="privacy.html" id="nav-privacy">Privacy</a>
+    </nav>
+    <div class="by-lang-switch">
+      <button class="lang-btn on" id="lb-id" onclick="setPLang('id')">ID</button>
+      <button class="lang-btn" id="lb-en" onclick="setPLang('en')">EN</button>
+    </div>
+  </header>
+
+  <div class="policy">
+    <h1 id="p-title">Tentang Credential Masker</h1>
+
+    <p id="p-1">Credential Masker adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.</p>
+
+    <h2 id="h-2"><i class="ti ti-bulb"></i> <span id="h-2-t">Kenapa Tool Ini Dibuat</span></h2>
+    <p id="p-2">Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credential Masker otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.</p>
+
+    <h2 id="h-3"><i class="ti ti-lock"></i> <span id="h-3-t">Kenapa Berjalan di Browser (Client-Side)</span></h2>
+    <p id="p-3">Semua proses masking terjadi 100% di browser kamu sendiri menggunakan JavaScript murni. Teks yang kamu tempel tidak pernah dikirim ke server mana pun — jadi kamu tetap bisa pakai tool ini untuk data yang sensitif tanpa khawatir soal kebocoran lewat pihak ketiga.</p>
+
+    <h2 id="h-4"><i class="ti ti-tools"></i> <span id="h-4-t">Cara Kerja Singkat</span></h2>
+    <p id="p-4">Tool ini mencocokkan pola teks lewat regular expression (IP address, port setelah titik dua atau flag <code>-p</code>, hostname/domain, email, serta pasangan <code>key=value</code> seperti <code>password=</code> atau <code>token=</code>), lalu mengganti setiap huruf/angka yang cocok dengan karakter <code>x</code> — panjang dan tanda baca aslinya tetap dipertahankan. Hasilnya tetap bisa kamu edit manual di kotak output kapan saja.</p>
+
+    <h2 id="h-5"><i class="ti ti-user"></i> <span id="h-5-t">Siapa yang Bikin</span></h2>
+    <p id="p-5">Credential Masker dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat <a href="https://jsonyamify.myid" target="_blank" rel="noopener noreferrer" id="jsonyamify-link">JSONYAMify</a>. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.</p>
+
+    <a class="back-link" href="index.html"><i class="ti ti-arrow-left"></i> <span id="back-text">Kembali ke Credential Masker</span></a>
+  </div>
+
+  <footer>
+    <div class="footer-row">
+      <div class="footer-left">
+        <i class="ti ti-mail"></i>
+        <span id="footer-issue-label">Ada bug, saran, atau mau bantu donasi? Email:</span>
+        <a href="mailto:andiogie@gmail.com?subject=%5BCredential%20Masker%5D%20Pesan%20dari%20Pengguna&body=Halo%2C%0A%0AIni%20saya%20mau%20sampaikan%20(hapus%20bagian%20yang%20gak%20relevan)%3A%0A%0A---%20%F0%9F%90%9E%20LAPOR%20BUG%20---%0ADeskripsi%20masalah%3A%0A%0ALangkah%20reproduksi%3A%0A1.%20%0A2.%20%0A%0AHasil%20yang%20diharapkan%3A%0A%0AHasil%20yang%20terjadi%3A%0A%0A%0A---%20%F0%9F%92%A1%20KRITIK%20%26%20SARAN%20---%0A%0A%0A---%20%F0%9F%92%B8%20DONASI%20---%0ASaya%20mau%20bantu%20donasi%20lewat%3A%20(Buy%20Me%20a%20Coffee%20%2F%20Trakteer%20%2F%20lainnya)%0A">andiogie@gmail.com</a>
+        <a href="https://ko-fi.com/andiogie" target="_blank" rel="noopener noreferrer" class="btn-sec" style="padding:2px 10px;font-size:12px"><i class="ti ti-coffee"></i> <span id="donateLabel">Dukung Project Ini</span></a>
+      </div>
+      <div class="footer-right">
+        <p>&copy; <span id="yr"></span> &mdash; by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a> &middot; <a href="about.html">About</a> &middot; <a href="#">Blog</a> &middot; <a href="faq.html">FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const PT = {
+  id: {
+    navAbout:'Tentang', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
+    title:'Tentang Credential Masker',
+    p1:'Credential Masker adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.',
+    h2t:'Kenapa Tool Ini Dibuat',
+    p2:'Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credential Masker otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.',
+    h3t:'Kenapa Berjalan di Browser (Client-Side)',
+    p3:'Semua proses masking terjadi 100% di browser kamu sendiri menggunakan JavaScript murni. Teks yang kamu tempel tidak pernah dikirim ke server mana pun — jadi kamu tetap bisa pakai tool ini untuk data yang sensitif tanpa khawatir soal kebocoran lewat pihak ketiga.',
+    h4t:'Cara Kerja Singkat',
+    p4:'Tool ini mencocokkan pola teks lewat regular expression (IP address, port setelah titik dua atau flag <code>-p</code>, hostname/domain, email, serta pasangan <code>key=value</code> seperti <code>password=</code> atau <code>token=</code>), lalu mengganti setiap huruf/angka yang cocok dengan karakter <code>x</code> — panjang dan tanda baca aslinya tetap dipertahankan. Hasilnya tetap bisa kamu edit manual di kotak output kapan saja.',
+    h5t:'Siapa yang Bikin',
+    p5:'Credential Masker dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat JSONYAMify. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.',
+    back:'Kembali ke Credential Masker',
+    footerIssue:'Ada bug, saran, atau mau bantu donasi? Email:',
+    donate:'Dukung Project Ini'
+  },
+  en: {
+    navAbout:'About', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
+    title:'About Credential Masker',
+    p1:'Credential Masker is a free tool for masking sensitive information — IP addresses, ports, hostnames/domains, emails, and password/token patterns — from any text before you share it with others, e.g. via screenshots, support chats, bug reports, or internal docs.',
+    h2t:'Why This Tool Exists',
+    p2:'We often need to share terminal output, application logs, or config files to get help debugging — but they contain internal IPs, production hostnames, or even passwords that got copied by accident. Masking that manually one by one is slow and easy to miss. Credential Masker automates that part, while still giving you full manual-edit control over the result.',
+    h3t:'Why It Runs in Your Browser (Client-Side)',
+    p3:'All masking happens 100% in your own browser using plain JavaScript. The text you paste is never sent to any server — so you can safely use this tool on sensitive data without worrying about a third-party leak.',
+    h4t:'How It Works',
+    p4:'The tool matches text patterns via regular expressions (IP addresses, ports after a colon or the <code>-p</code> flag, hostnames/domains, emails, and <code>key=value</code> pairs like <code>password=</code> or <code>token=</code>), then replaces every matched letter/digit with <code>x</code> — keeping the original length and punctuation. The output box remains manually editable at any time.',
+    h5t:'Who Made This',
+    p5:'Credential Masker is built and maintained by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, who also built JSONYAMify. Have feedback, found a bug, or have a feature idea? Check the <a href="faq.html">FAQ</a> page or reach out via the footer below.',
+    back:'Back to Credential Masker',
+    footerIssue:'Found a bug or have a suggestion? Email:',
+    donate:'Support This Project'
+  }
+};
+
+function setPLang(l){
+  const d = PT[l];
+  document.getElementById('lb-id').classList.toggle('on', l==='id');
+  document.getElementById('lb-en').classList.toggle('on', l==='en');
+  document.documentElement.lang = l;
+  document.getElementById('nav-about').textContent = d.navAbout;
+  document.getElementById('nav-faq').textContent = d.navFaq;
+  document.getElementById('nav-blog').textContent = d.navBlog;
+  document.getElementById('nav-privacy').textContent = d.navPrivacy;
+  document.getElementById('p-title').textContent = d.title;
+  document.getElementById('p-1').textContent = d.p1;
+  document.getElementById('h-2-t').textContent = d.h2t;
+  document.getElementById('p-2').textContent = d.p2;
+  document.getElementById('h-3-t').textContent = d.h3t;
+  document.getElementById('p-3').textContent = d.p3;
+  document.getElementById('h-4-t').textContent = d.h4t;
+  document.getElementById('p-4').innerHTML = d.p4;
+  document.getElementById('h-5-t').textContent = d.h5t;
+  document.getElementById('p-5').innerHTML = d.p5;
+  document.getElementById('back-text').textContent = d.back;
+  document.getElementById('footer-issue-label').textContent = d.footerIssue;
+  document.querySelectorAll('#donateLabel').forEach(el => el.textContent = d.donate);
+}
+</script>
+</body>
+</html>

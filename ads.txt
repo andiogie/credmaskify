@@ -1,0 +1,9 @@
+# PENTING: file ini WAJIB diisi dengan Publisher ID asli dari akun AdSense kamu
+# supaya AdSense bisa memverifikasi kepemilikan inventory iklan di situs ini.
+#
+# Cara isi:
+# 1. Login ke akun Google AdSense kamu (akun yang sama dengan jsonyamify kalau mau dipakai bareng)
+# 2. Buka menu Sites / Akun > lihat kode "pub-xxxxxxxxxxxxxxxx" punya kamu
+# 3. Ganti baris di bawah ini, hapus tanda # di depannya
+#
+# google.com, pub-xxxxxxxxxxxxxxxx, DIRECT, f08c47fec0942fa0
