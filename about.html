@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tentang Credential Masker — Kenapa Tool Ini Dibuat</title>
-  <meta name="description" content="Credential Masker adalah tool gratis, client-side, untuk menyamarkan IP, port, hostname, email, dan password/token dari teks sebelum kamu bagikan. Baca kenapa dan bagaimana tool ini dibuat."/>
+  <title>Tentang Credmaskify — Kenapa Tool Ini Dibuat</title>
+  <meta name="description" content="Credmaskify adalah tool gratis, client-side, untuk menyamarkan IP, port, hostname, email, dan password/token dari teks sebelum kamu bagikan. Baca kenapa dan bagaimana tool ini dibuat."/>
   <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://credential-masker.example.com/about.html"/>
+  <link rel="canonical" href="https://credmaskify.my.id/about.html"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
   <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <div class="app" id="app">
 
   <header>
-    <a href="index.html">Credential Masker</a>
+    <a href="index.html">Credmaskify</a>
     <nav>
       <a href="about.html" class="active" id="nav-about">Tentang</a>
       <a href="faq.html" id="nav-faq">FAQ</a>
@@ -28,12 +29,12 @@
   </header>
 
   <div class="policy">
-    <h1 id="p-title">Tentang Credential Masker</h1>
+    <h1 id="p-title">Tentang Credmaskify</h1>
 
-    <p id="p-1">Credential Masker adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.</p>
+    <p id="p-1">Credmaskify adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.</p>
 
     <h2 id="h-2"><i class="ti ti-bulb"></i> <span id="h-2-t">Kenapa Tool Ini Dibuat</span></h2>
-    <p id="p-2">Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credential Masker otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.</p>
+    <p id="p-2">Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credmaskify otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.</p>
 
     <h2 id="h-3"><i class="ti ti-lock"></i> <span id="h-3-t">Kenapa Berjalan di Browser (Client-Side)</span></h2>
     <p id="p-3">Semua proses masking terjadi 100% di browser kamu sendiri menggunakan JavaScript murni. Teks yang kamu tempel tidak pernah dikirim ke server mana pun — jadi kamu tetap bisa pakai tool ini untuk data yang sensitif tanpa khawatir soal kebocoran lewat pihak ketiga.</p>
@@ -42,9 +43,9 @@
     <p id="p-4">Tool ini mencocokkan pola teks lewat regular expression (IP address, port setelah titik dua atau flag <code>-p</code>, hostname/domain, email, serta pasangan <code>key=value</code> seperti <code>password=</code> atau <code>token=</code>), lalu mengganti setiap huruf/angka yang cocok dengan karakter <code>x</code> — panjang dan tanda baca aslinya tetap dipertahankan. Hasilnya tetap bisa kamu edit manual di kotak output kapan saja.</p>
 
     <h2 id="h-5"><i class="ti ti-user"></i> <span id="h-5-t">Siapa yang Bikin</span></h2>
-    <p id="p-5">Credential Masker dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat <a href="https://jsonyamify.myid" target="_blank" rel="noopener noreferrer" id="jsonyamify-link">JSONYAMify</a>. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.</p>
+    <p id="p-5">Credmaskify dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat <a href="https://jsonyamify.myid" target="_blank" rel="noopener noreferrer" id="jsonyamify-link">JSONYAMify</a>. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.</p>
 
-    <a class="back-link" href="index.html"><i class="ti ti-arrow-left"></i> <span id="back-text">Kembali ke Credential Masker</span></a>
+    <a class="back-link" href="index.html"><i class="ti ti-arrow-left"></i> <span id="back-text">Kembali ke Credmaskify</span></a>
   </div>
 
   <footer>
@@ -69,33 +70,33 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 const PT = {
   id: {
     navAbout:'Tentang', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
-    title:'Tentang Credential Masker',
-    p1:'Credential Masker adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.',
+    title:'Tentang Credmaskify',
+    p1:'Credmaskify adalah tool gratis untuk menyamarkan informasi sensitif — IP address, port, hostname/domain, email, dan pola password/token — dari teks apa pun sebelum kamu bagikan ke orang lain, misalnya lewat screenshot, chat support, tiket bug report, atau dokumentasi internal.',
     h2t:'Kenapa Tool Ini Dibuat',
-    p2:'Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credential Masker otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.',
+    p2:'Sering kali kita perlu share hasil terminal, log aplikasi, atau file konfigurasi ke orang lain untuk minta bantuan debug — tapi di dalamnya ada IP internal, hostname server produksi, atau bahkan password yang ke-copy tanpa sengaja. Menyamarkan itu manual satu-satu itu makan waktu dan gampang kelewatan. Credmaskify otomatiskan bagian itu, sambil tetap kasih kamu kontrol penuh untuk edit manual hasilnya.',
     h3t:'Kenapa Berjalan di Browser (Client-Side)',
     p3:'Semua proses masking terjadi 100% di browser kamu sendiri menggunakan JavaScript murni. Teks yang kamu tempel tidak pernah dikirim ke server mana pun — jadi kamu tetap bisa pakai tool ini untuk data yang sensitif tanpa khawatir soal kebocoran lewat pihak ketiga.',
     h4t:'Cara Kerja Singkat',
     p4:'Tool ini mencocokkan pola teks lewat regular expression (IP address, port setelah titik dua atau flag <code>-p</code>, hostname/domain, email, serta pasangan <code>key=value</code> seperti <code>password=</code> atau <code>token=</code>), lalu mengganti setiap huruf/angka yang cocok dengan karakter <code>x</code> — panjang dan tanda baca aslinya tetap dipertahankan. Hasilnya tetap bisa kamu edit manual di kotak output kapan saja.',
     h5t:'Siapa yang Bikin',
-    p5:'Credential Masker dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat JSONYAMify. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.',
-    back:'Kembali ke Credential Masker',
+    p5:'Credmaskify dibuat dan dirawat oleh <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, yang juga membuat JSONYAMify. Ada masukan, bug, atau ide fitur? Lihat halaman <a href="faq.html">FAQ</a> atau kontak lewat footer di bawah.',
+    back:'Kembali ke Credmaskify',
     footerIssue:'Ada bug, saran, atau mau bantu donasi? Email:',
     donate:'Dukung Project Ini'
   },
   en: {
     navAbout:'About', navFaq:'FAQ', navBlog:'Blog', navPrivacy:'Privacy',
-    title:'About Credential Masker',
-    p1:'Credential Masker is a free tool for masking sensitive information — IP addresses, ports, hostnames/domains, emails, and password/token patterns — from any text before you share it with others, e.g. via screenshots, support chats, bug reports, or internal docs.',
+    title:'About Credmaskify',
+    p1:'Credmaskify is a free tool for masking sensitive information — IP addresses, ports, hostnames/domains, emails, and password/token patterns — from any text before you share it with others, e.g. via screenshots, support chats, bug reports, or internal docs.',
     h2t:'Why This Tool Exists',
-    p2:'We often need to share terminal output, application logs, or config files to get help debugging — but they contain internal IPs, production hostnames, or even passwords that got copied by accident. Masking that manually one by one is slow and easy to miss. Credential Masker automates that part, while still giving you full manual-edit control over the result.',
+    p2:'We often need to share terminal output, application logs, or config files to get help debugging — but they contain internal IPs, production hostnames, or even passwords that got copied by accident. Masking that manually one by one is slow and easy to miss. Credmaskify automates that part, while still giving you full manual-edit control over the result.',
     h3t:'Why It Runs in Your Browser (Client-Side)',
     p3:'All masking happens 100% in your own browser using plain JavaScript. The text you paste is never sent to any server — so you can safely use this tool on sensitive data without worrying about a third-party leak.',
     h4t:'How It Works',
     p4:'The tool matches text patterns via regular expressions (IP addresses, ports after a colon or the <code>-p</code> flag, hostnames/domains, emails, and <code>key=value</code> pairs like <code>password=</code> or <code>token=</code>), then replaces every matched letter/digit with <code>x</code> — keeping the original length and punctuation. The output box remains manually editable at any time.',
     h5t:'Who Made This',
-    p5:'Credential Masker is built and maintained by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, who also built JSONYAMify. Have feedback, found a bug, or have a feature idea? Check the <a href="faq.html">FAQ</a> page or reach out via the footer below.',
-    back:'Back to Credential Masker',
+    p5:'Credmaskify is built and maintained by <a href="https://andiogie.vercel.app/" target="_blank" rel="noopener noreferrer">Andi Putra Ogie</a>, who also built JSONYAMify. Have feedback, found a bug, or have a feature idea? Check the <a href="faq.html">FAQ</a> page or reach out via the footer below.',
+    back:'Back to Credmaskify',
     footerIssue:'Found a bug or have a suggestion? Email:',
     donate:'Support This Project'
   }
